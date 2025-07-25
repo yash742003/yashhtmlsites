@@ -1,0 +1,145 @@
+<svg width="600" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7df1e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcc02;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow filters -->
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="jsGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Animations -->
+    <animateTransform id="float" attributeName="transform" type="translate" 
+                     values="0,0; 0,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+    
+    <animateTransform id="bounce" attributeName="transform" type="translate" 
+                     values="0,0; 0,-10; 0,0" dur="2s" repeatCount="indefinite"/>
+    
+    <animate id="glowAnim" attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    
+    <animate id="particleFloat" attributeName="cy" values="0;-20;0" dur="6s" repeatCount="indefinite"/>
+    
+    <animate id="bracketFloat" attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGradient)"/>
+  
+  <!-- Main container -->
+  <g transform="translate(300, 250)">
+    <!-- Main logo container -->
+    <rect x="-160" y="-120" width="320" height="240" rx="20" ry="20" 
+          fill="rgba(0,0,0,0.85)" stroke="#f7df1e" stroke-width="3"
+          filter="url(#textGlow)">
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- JS Badge -->
+    <g transform="translate(145, -135)">
+      <rect x="-25" y="-25" width="50" height="50" rx="10" ry="10" 
+            fill="#f7df1e" filter="url(#jsGlow)">
+        <animateTransform attributeName="transform" type="translate" 
+                         values="0,0; 0,-10; 0,0" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" 
+            font-size="18" font-weight="bold" fill="black">JS</text>
+    </g>
+    
+    <!-- Console log text -->
+    <text x="-140" y="-100" font-family="Courier New, monospace" font-size="10" 
+          fill="#4CAF50" opacity="0.6">
+      console.log("Hello World!");
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Floating brackets -->
+    <text x="-120" y="-80" font-family="Arial, sans-serif" font-size="48" 
+          fill="rgba(247, 223, 30, 0.3)" text-anchor="middle">(
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite"/>
+    </text>
+    
+    <text x="120" y="-60" font-family="Arial, sans-serif" font-size="48" 
+          fill="rgba(247, 223, 30, 0.3)" text-anchor="middle">)
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </text>
+    
+    <text x="-110" y="40" font-family="Arial, sans-serif" font-size="48" 
+          fill="rgba(247, 223, 30, 0.3)" text-anchor="middle">{
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" begin="2s"/>
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </text>
+    
+    <text x="110" y="80" font-family="Arial, sans-serif" font-size="48" 
+          fill="rgba(247, 223, 30, 0.3)" text-anchor="middle">}
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" begin="3s"/>
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite" begin="3s"/>
+    </text>
+    
+    <!-- Main text -->
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="72" font-weight="900" fill="#f7df1e" filter="url(#textGlow)">
+      YASH
+      <animate attributeName="opacity" values="0;1" dur="1s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+                       values="-100,0; 0,0" dur="1s" fill="freeze"/>
+    </text>
+    
+    <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="72" font-weight="900" fill="#ffcc02" filter="url(#textGlow)">
+      DEEP
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="0.3s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+                       values="100,0; 0,0" dur="1s" begin="0.3s" fill="freeze"/>
+    </text>
+    
+    <!-- Code snippet -->
+    <text x="0" y="100" text-anchor="middle" font-family="Courier New, monospace" 
+          font-size="12" fill="#61dafb" opacity="0.7">
+      const developer = "awesome";
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Floating particles -->
+    <circle cx="-80" cy="-40" r="2" fill="#f7df1e" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-20; 0,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="80" cy="-20" r="2" fill="#f7df1e" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-20; 0,0" dur="6s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    
+    <circle cx="-60" cy="30" r="2" fill="#f7df1e" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-20; 0,0" dur="6s" repeatCount="indefinite" begin="4s"/>
+    </circle>
+    
+    <circle cx="60" cy="50" r="2" fill="#f7df1e" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-20; 0,0" dur="6s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+</svg>

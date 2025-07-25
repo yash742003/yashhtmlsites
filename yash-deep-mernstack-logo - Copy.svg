@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#203a43;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c5364;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="nameGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#61DAFB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#47A248;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="nameGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#68A063;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#47A248;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:transparent;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#61DAFB;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    
+    <!-- Animations -->
+    <animateTransform id="float" attributeName="transform" type="translate" 
+                     values="0,0; 0,-12; 0,0" dur="4s" repeatCount="indefinite"/>
+    
+    <animateTransform id="spin" attributeName="transform" type="rotate" 
+                     values="0; 180; 0" dur="3s" repeatCount="indefinite"/>
+    
+    <animateTransform id="orbit1" attributeName="transform" type="rotate" 
+                     values="0 400 300; 360 400 300" dur="15s" repeatCount="indefinite"/>
+    
+    <animateTransform id="orbit2" attributeName="transform" type="rotate" 
+                     values="360 400 300; 0 400 300" dur="20s" repeatCount="indefinite"/>
+    
+    <animate id="pulse" attributeName="opacity" values="0.8; 1; 0.8" dur="2s" repeatCount="indefinite"/>
+    
+    <animate id="fadeInOut" attributeName="opacity" values="0.7; 1; 0.7" dur="4s" repeatCount="indefinite"/>
+    
+    <animateTransform id="dataFlow1" attributeName="transform" type="translate" 
+                     values="-800,0; 800,0" dur="3s" repeatCount="indefinite"/>
+    
+    <animateTransform id="dataFlow2" attributeName="transform" type="translate" 
+                     values="-800,0; 800,0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Main Container -->
+  <g transform="translate(400,300)">
+    <!-- Container Background -->
+    <rect x="-240" y="-200" width="480" height="400" rx="25" ry="25" 
+          fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" 
+          stroke-width="2" filter="url(#blur)">
+      <animateTransform attributeName="transform" type="translate" 
+                       values="0,0; 0,-12; 0,0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- MERN Badges (Top Right) -->
+    <g transform="translate(200,-180)">
+      <!-- MongoDB -->
+      <circle cx="0" cy="0" r="17" fill="#47A248">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0; 180; 0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="3" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">M</text>
+      
+      <!-- Express -->
+      <circle cx="40" cy="0" r="17" fill="#000000">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0; 180; 0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="40" y="3" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">E</text>
+      
+      <!-- React -->
+      <circle cx="0" cy="40" r="17" fill="#61DAFB">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0; 180; 0" dur="3s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="43" text-anchor="middle" fill="black" font-family="Arial" font-size="8" font-weight="bold">R</text>
+      
+      <!-- Node.js -->
+      <circle cx="40" cy="40" r="17" fill="#68A063">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0; 180; 0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="40" y="43" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">N</text>
+    </g>
+    
+    <!-- Stack Indicator -->
+    <text x="-220" y="-165" fill="rgba(255,255,255,0.7)" font-family="Arial" font-size="12" font-weight="bold">
+      FULL STACK
+      <animate attributeName="opacity" values="0.7; 1; 0.7" dur="4s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Orbital Elements -->
+    <g>
+      <!-- Orbit 1 -->
+      <circle cx="0" cy="0" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0; 360" dur="15s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="-100" r="4" fill="#61DAFB" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0 0 0; 360 0 0" dur="15s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Orbit 2 -->
+      <circle cx="0" cy="0" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="360; 0" dur="20s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="-150" r="4" fill="#47A248" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="360 0 0; 0 0 0" dur="20s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Connection Lines -->
+    <g>
+      <rect x="-240" y="-40" width="480" height="1" fill="url(#lineGradient)">
+        <animateTransform attributeName="transform" type="translate" 
+                         values="-480,0; 480,0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-240" y="40" width="480" height="1" fill="url(#lineGradient)">
+        <animateTransform attributeName="transform" type="translate" 
+                         values="-480,0; 480,0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Main Text -->
+    <g>
+      <!-- YASH -->
+      <text x="0" y="-30" text-anchor="middle" fill="url(#nameGradient1)" 
+            font-family="Arial" font-size="72" font-weight="900" filter="url(#glow)">
+        YASH
+        <animate attributeName="opacity" values="1; 0.8; 1" dur="3s" repeatCount="indefinite"/>
+      </text>
+      
+      <!-- DEEP -->
+      <text x="0" y="50" text-anchor="middle" fill="url(#nameGradient2)" 
+            font-family="Arial" font-size="72" font-weight="900" filter="url(#glow)">
+        DEEP
+        <animate attributeName="opacity" values="1; 0.8; 1" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </text>
+    </g>
+    
+    <!-- Tech Stack Labels -->
+    <g transform="translate(0,160)">
+      <rect x="-100" y="-10" width="60" height="20" rx="10" ry="10" fill="#47A248">
+        <animate attributeName="opacity" values="0.8; 1; 0.8" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="-70" y="3" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">MongoDB</text>
+      
+      <rect x="-35" y="-10" width="50" height="20" rx="10" ry="10" fill="#000000">
+        <animate attributeName="opacity" values="0.8; 1; 0.8" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </rect>
+      <text x="-10" y="3" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">Express</text>
+      
+      <rect x="20" y="-10" width="40" height="20" rx="10" ry="10" fill="#61DAFB">
+        <animate attributeName="opacity" values="0.8; 1; 0.8" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </rect>
+      <text x="40" y="3" text-anchor="middle" fill="black" font-family="Arial" font-size="10" font-weight="bold">React</text>
+      
+      <rect x="65" y="-10" width="50" height="20" rx="10" ry="10" fill="#68A063">
+        <animate attributeName="opacity" values="0.8; 1; 0.8" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <text x="90" y="3" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">Node.js</text>
+    </g>
+  </g>
+</svg>

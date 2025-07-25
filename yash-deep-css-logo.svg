@@ -1,0 +1,172 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5298;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- CSS Badge Gradient -->
+    <linearGradient id="cssGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#264de4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2965f1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Text Gradient for YASH -->
+    <linearGradient id="textGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#264de4;stop-opacity:1">
+        <animate attributeName="stop-color" values="#264de4;#2965f1;#264de4" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#2965f1;stop-opacity:1">
+        <animate attributeName="stop-color" values="#2965f1;#264de4;#2965f1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Text Gradient for DEEP -->
+    <linearGradient id="textGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2965f1;stop-opacity:1">
+        <animate attributeName="stop-color" values="#2965f1;#264de4;#2965f1" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#264de4;stop-opacity:1">
+        <animate attributeName="stop-color" values="#264de4;#2965f1;#264de4" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="8" stdDeviation="12" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+    
+    <!-- Line Gradient -->
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:transparent;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0.5);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Glassmorphism Container -->
+  <rect x="50" y="50" width="500" height="300" rx="25" ry="25" 
+        fill="rgba(255,255,255,0.05)" 
+        stroke="rgba(255,255,255,0.1)" 
+        stroke-width="3" 
+        filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,0; 0,-8; 0,0" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- CSS Shield Badge -->
+  <circle cx="530" cy="70" r="30" fill="url(#cssGradient)" filter="url(#glow)">
+    <animateTransform attributeName="transform" type="rotate" 
+                      values="0 530 70; 360 530 70" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- CSS Text in Badge -->
+  <text x="530" y="78" font-family="Arial, sans-serif" font-size="12" font-weight="bold" 
+        text-anchor="middle" fill="white">CSS</text>
+  
+  <!-- Left Bracket -->
+  <text x="80" y="220" font-family="Arial, sans-serif" font-size="96" font-weight="300" 
+        text-anchor="middle" fill="rgba(255,255,255,0.2)">
+    {
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" 
+                      values="1,1; 1.05,1.05; 1,1" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Right Bracket -->
+  <text x="520" y="220" font-family="Arial, sans-serif" font-size="96" font-weight="300" 
+        text-anchor="middle" fill="rgba(255,255,255,0.2)">
+    }
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" 
+                      values="1,1; 1.05,1.05; 1,1" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Main Text: YASH -->
+  <text x="300" y="180" font-family="Arial, sans-serif" font-size="72" font-weight="900" 
+        text-anchor="middle" fill="url(#textGradient1)" filter="url(#glow)">
+    YASH
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,-50; 0,0" dur="1.2s" begin="0s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1" dur="1.2s" begin="0s" fill="freeze"/>
+  </text>
+  
+  <!-- Main Text: DEEP -->
+  <text x="300" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="900" 
+        text-anchor="middle" fill="url(#textGradient2)" filter="url(#glow)">
+    DEEP
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,50; 0,0" dur="1.2s" begin="0.3s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1" dur="1.2s" begin="0.3s" fill="freeze"/>
+  </text>
+  
+  <!-- CSS Properties -->
+  <text x="150" y="320" font-family="Courier New, monospace" font-size="10" 
+        fill="rgba(255,255,255,0.6)">
+    color: #awesome;
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="280" y="320" font-family="Courier New, monospace" font-size="10" 
+        fill="rgba(255,255,255,0.6)">
+    display: flex;
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" begin="1s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="380" y="320" font-family="Courier New, monospace" font-size="10" 
+        fill="rgba(255,255,255,0.6)">
+    position: creative;
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" begin="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Decorative Lines -->
+  <line x1="50" y1="130" x2="550" y2="130" stroke="url(#lineGradient)" stroke-width="2">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" 
+                      values="-500,0; 500,0" dur="3s" repeatCount="indefinite"/>
+  </line>
+  
+  <line x1="50" y1="280" x2="550" y2="280" stroke="url(#lineGradient)" stroke-width="2">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" 
+                      values="-500,0; 500,0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Floating Particles -->
+  <circle cx="120" cy="100" r="2" fill="#264de4" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,0; 0,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="480" cy="120" r="2" fill="#2965f1" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="1s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,0; 0,-10; 0,0" dur="3s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="150" cy="300" r="2" fill="#264de4" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,0; 0,-10; 0,0" dur="3s" begin="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="450" cy="290" r="2" fill="#2965f1" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" 
+                      values="0,0; 0,-10; 0,0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
